@@ -9,16 +9,30 @@
 <body>
 <div class="section d-flex justify-content-center">
   <div class="">
+    <label for="">User</label>
+    <input type="text" id="userName"></div>
+  <div class="">
     <label for="">Github repository Name</label>
     <input type="text" id="repositoryName"></div>
   <div class="">
     <label for="">Branch Name</label>
     <input type="text" id="branchName"></div>
+  <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn" id="filter">Filter</button>
+    <div id="myDropdown" class="dropdown-content">
 
+
+      <label href="#about" id="commitHashFilter">Commit Hashes</label>
+      <br>
+      <label href="#base" id="commitNameFilter">Commit Names</label>
+    </div>
+  </div>
 
 </div>
-<button class="button">Find</button>
+<button class="button" id="button" onclick="getCommits()">Find</button>
+<div class="commits" id="commits">
 
+</div>
 <br>
 </body>
 <script src="index.js"></script>
