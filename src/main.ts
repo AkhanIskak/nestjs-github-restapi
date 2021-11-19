@@ -9,7 +9,6 @@ async function bootstrap() {
   app.useStaticAssets(join(__dirname, '..', 'public'));
   app.setBaseViewsDir(join(__dirname, '..', 'views'));
   app.setViewEngine('hbs');
-  const port: number = parseInt(`${process.env.PORT}`) || 3000;
-  await app.listen(port);
+  await app.listen(process.env.PORT);
 }
 bootstrap();
