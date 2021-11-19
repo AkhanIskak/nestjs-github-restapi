@@ -5,7 +5,9 @@ let getCommits = async () => {
   let userName = document.getElementById('userName').value;
   let res = await fetch(`https://nestjs-github-restapi.herokuapp.com/repo/${userName}/${repositoryName}/${branchName}?filterBy=${filter}`);
   let data = await res.json();
-  console.log(data.length);
+  if(data.length<1){
+    alert('Not found');
+  }
   data.map((el) =>
     document
       .getElementById('commits')
